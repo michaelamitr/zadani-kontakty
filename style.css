@@ -1,6 +1,13 @@
 /* nejsme vcerejsi, pouzivame moderni box model */
-html { box-sizing: border-box; }
-*, :after, :before { box-sizing: inherit; }
+html {
+	box-sizing: border-box;
+}
+
+*,
+:after,
+:before {
+	box-sizing: inherit;
+}
 
 body {
 	font-family: sans-serif;
@@ -8,3 +15,106 @@ body {
 }
 
 /* ---------------------------------------------------- */
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+}
+
+header {
+	text-align: center;
+}
+
+.medailonek {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	text-align: center;
+	padding: 10px;
+	margin: 10px;
+	border: 1px solid black;
+	border-radius: 2%;
+	width: 300px;
+	height: 300px;
+}
+
+img {
+	border: 0;
+	border-radius: 50%;
+}
+
+@media (min-width: 540px) {
+	main {
+		flex-direction: row;
+		justify-content: space-evenly;
+		gap: 10px;
+	}
+
+	.medailonek {
+		flex-direction: row;
+		width: 270px;
+		height: 120px;
+		flex-basis: 48%;
+		margin: 0px;
+		gap: 10px;
+	}
+
+	.fotka {
+		display: flex;
+		margin: 2px;
+	}
+
+	.popis {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		text-align: left;
+	}
+
+	h2,
+	p {
+		font-size: smaller;
+	}
+}
+
+@media (min-width: 960px) {
+	main {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-content: center;
+		gap: 0px;
+		flex-wrap: nowrap;
+	}
+
+	.fotka {
+		justify-content: center;
+		margin: 0px;
+	}
+
+	.popis {
+		text-align: center;
+	}
+
+	.medailonek {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		padding: 10px;
+		margin: 10px;
+		border: 1px solid black;
+		border-radius: 2%;
+		width: 215px;
+		height: 215px;
+		flex-basis: 24%;
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+
+	img {
+		width: 90px;
+		height: 90px;
+	}
+}
